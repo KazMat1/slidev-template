@@ -23,7 +23,7 @@ maxTurns: 15
 以下のいずれかを受け取る:
 - 箇条書きのメモ
 - トピックの概要説明
-- spec.md（spec-analyst が生成した場合）
+- requirements.md（spec-analyst が生成した場合）
 - 自由記述のテキスト
 
 ## 出力: story.md
@@ -63,8 +63,8 @@ maxTurns: 15
 
 ## 参照ファイル
 
-- `docs/slidev-knowhow.md` — レイアウト一覧と設計原則
-- `docs/slide-patterns.md` — 再利用可能なスライドパターン
+- `docs/reference/slidev-knowhow.md` — レイアウト一覧と設計原則
+- `docs/reference/slide-patterns.md` — 再利用可能なスライドパターン
 
 ## 注意事項
 

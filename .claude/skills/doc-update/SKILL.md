@@ -29,9 +29,9 @@ Task ツール呼び出し:
     5. 更新箇所ごとのサマリーを出力
 
     同期対象:
-    - docs/slidev-knowhow.md ↔ components/, layouts/
-    - docs/slide-patterns.md ↔ 実際のスライドパターン
-    - docs/speckit-workflow.md ↔ .claude/commands/speckit.*.md
+    - docs/reference/slidev-knowhow.md ↔ components/, layouts/
+    - docs/reference/slide-patterns.md ↔ 実際のスライドパターン
+    - docs/guides/sdd-workflow.md ↔ .claude/commands/sdd.md
     - CLAUDE.md の Commands ↔ package.json の scripts
 ```
 

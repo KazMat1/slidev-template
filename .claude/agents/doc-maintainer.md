@@ -24,20 +24,20 @@ maxTurns: 15
 
 - `components/` 配下のカスタム Vue コンポーネントをスキャン
 - `layouts/` 配下のカスタムレイアウトをスキャン
-- `docs/slidev-knowhow.md` の該当セクションと比較
+- `docs/reference/slidev-knowhow.md` の該当セクションと比較
 - 新しいコンポーネント/レイアウトがあれば追記、削除されたものは注記
 
 ### 2. slide-patterns.md ↔ 実際のパターン
 
 - `slides.md` や `pages/` 配下のスライドファイルをスキャン
 - 使用されているレイアウト＋コンポーネントの組合せを検出
-- `docs/slide-patterns.md` に未記載のパターンがあれば追記
+- `docs/reference/slide-patterns.md` に未記載のパターンがあれば追記
 
-### 3. speckit-workflow.md ↔ コマンド定義
+### 3. sdd-workflow.md ↔ /sdd コマンド
 
-- `.claude/commands/speckit.*.md` の一覧と内容を確認
-- `docs/speckit-workflow.md` との整合性をチェック
-- コマンドの追加・変更があれば更新
+- `.claude/commands/sdd.md` の内容を確認
+- `docs/guides/sdd-workflow.md` との整合性をチェック
+- コマンドの変更があれば更新
 
 ### 4. CLAUDE.md ↔ package.json
 
@@ -60,15 +60,15 @@ maxTurns: 15
 # ドキュメント同期レポート
 
 ## 更新されたファイル
-- `docs/slidev-knowhow.md`: カスタムコンポーネント 2件追加
+- `docs/reference/slidev-knowhow.md`: カスタムコンポーネント 2件追加
 - `CLAUDE.md`: Commands セクション更新
 
 ## 変更なし
-- `docs/slide-patterns.md`
-- `docs/speckit-workflow.md`
+- `docs/reference/slide-patterns.md`
+- `docs/guides/sdd-workflow.md`
 
 ## 詳細
-### docs/slidev-knowhow.md
+### docs/reference/slidev-knowhow.md
 - 追加: `<ChartComponent>` — データ可視化コンポーネント
 - 追加: `<AnimatedList>` — アニメーション付きリスト
 ```

@@ -22,7 +22,7 @@ maxTurns: 10
 ### 1. 構文検証
 - Slidev フロントマターの正当性
 - `---` 区切りの正しい使用
-- レイアウト名の有効性（`docs/slidev-knowhow.md` のレイアウト一覧と照合）
+- レイアウト名の有効性（`docs/reference/slidev-knowhow.md` のレイアウト一覧と照合）
 - コードブロックの言語指定
 - コンポーネントタグの閉じ忘れ
 
@@ -74,8 +74,8 @@ maxTurns: 10
 
 ## 参照ファイル
 
-- `docs/slidev-knowhow.md` — レイアウト一覧・設計原則
-- `docs/slide-patterns.md` — パターンカタログ
+- `docs/reference/slidev-knowhow.md` — レイアウト一覧・設計原則
+- `docs/reference/slide-patterns.md` — パターンカタログ
 - `story.md` — ストーリー構成（整合性チェック用）
 
 ## 仕様分析レビュー
@@ -84,7 +84,7 @@ maxTurns: 10
 
 - requirements.md と design.md の整合性
 - スライド構成表のレイアウト選択が要件に適しているか
-- パターンカタログ（docs/slide-patterns.md）の適切な適用
+- パターンカタログ（docs/reference/slide-patterns.md）の適切な適用
 - 非機能要件（スライド枚数、聴衆レベル）の設計への反映
 
 ## 注意事項

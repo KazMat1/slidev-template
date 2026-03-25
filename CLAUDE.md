@@ -5,7 +5,7 @@ This file provides guidance to Claude Code when working with this repository.
 ## Project Overview
 
 Slidev (Markdown-based presentation framework) テンプレートリポジトリ。
-Spec-Kit + 専門化 SubAgents でスライド自動生成ワークフローを提供する。
+SDD (Spec-Driven Development) + 専門化 SubAgents でスライド自動生成ワークフローを提供する。
 
 ## Commands
 
@@ -15,37 +15,35 @@ Spec-Kit + 専門化 SubAgents でスライド自動生成ワークフローを�
 
 ## Slidev ナレッジ
 
-@docs/slidev-knowhow.md
+@docs/reference/slidev-knowhow.md
 
 ## スライドパターン
 
-@docs/slide-patterns.md
+@docs/reference/slide-patterns.md
 
 ## SubAgent ワークフロー
 
 ### `/sdd` コマンド（推奨）
 
-統一的な Spec-Driven Development コマンド。5フェーズを順に実行し、各フェーズの重い処理を SubAgent に委譲:
+統一的な Spec-Driven Development コマンド。7フェーズを順に実行し、各フェーズの重い処理を SubAgent に委譲:
 
 1. 事前準備 → プロジェクトドキュメント読み込み
-2. 要件定義 → `spec-analyst` SubAgent で requirements.md 作成
-3. 設計 → `spec-analyst` SubAgent で design.md 作成
+2. 要件定義 → `spec-analyst` SubAgent で requirements.md 作成 + 明確化ループ
+3. 設計 → `spec-analyst` SubAgent で research.md + design.md 作成
 4. 実装計画 → `spec-analyst` SubAgent で tasks.md 作成
-5. 実装 → `slide-developer` SubAgent でスライド生成 + `slide-reviewer` でレビュー
+5. 整合性分析 → `spec-analyst` SubAgent で要件・設計・タスクの整合性チェック
+6. 実装 → `slide-developer` SubAgent でスライド生成 + `slide-reviewer` でレビュー
+7. 完了 → GitHub Issues 変換（オプション）+ `doc-maintainer` でドキュメント同期
 
 ### 個別 SubAgents
 
 専門化 SubAgents は `/sdd` から自動的に呼ばれるが、個別利用も可能:
 
-- **spec-analyst** — 要件分析・設計・タスク分割
+- **spec-analyst** — 要件分析・設計・タスク分割・整合性分析
 - **slide-story-writer** — 箇条書き → ストーリー構成 (story.md) 生成
 - **slide-developer** — ストーリー → Slidev マークダウン生成
 - **slide-reviewer** — 品質チェック・仕様分析レビュー（読取専用）
 - **doc-maintainer** — docs/ 配下のドキュメントをコードベースと同期
-
-### 既存 spec-kit コマンド
-
-`/speckit.*` コマンド群は個別利用も引き続き可能。`/sdd` はその上位レイヤーとして機能する。
 
 ## ドキュメント管理
 
@@ -53,9 +51,20 @@ Spec-Kit + 専門化 SubAgents でスライド自動生成ワークフローを�
 - `/doc-update` で doc-maintainer を起動してドキュメントを自動更新
 - docs/ 配下のファイルは手動編集も可能（エージェントは既存内容を保持して追記する）
 
-## Spec-Kit ワークフロー
+## SDD ワークフロー
 
-@docs/speckit-workflow.md
+@docs/guides/sdd-workflow.md
+
+## 成果物の配置
+
+```
+docs/specs/{spec-name}/
+├── requirements.md           # 要件
+├── checklists/               # 品質チェックリスト
+├── research.md               # リサーチ
+├── design.md                 # 設計
+└── tasks.md                  # 実装計画
+```
 
 ## Branch 命名規則
 

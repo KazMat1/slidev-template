@@ -17,7 +17,7 @@ docs/ 配下のドキュメントがコードベースの現状と一致して�
 1. **コンポーネントスキャン**: `components/` 配下の `.vue` ファイル一覧を取得
 2. **レイアウトスキャン**: `layouts/` 配下の `.vue` ファイル一覧を取得
 3. **スタイルスキャン**: `styles/` 配下のファイル一覧を取得
-4. **ドキュメント読み込み**: `docs/slidev-knowhow.md` を読み込み
+4. **ドキュメント読み込み**: `docs/reference/slidev-knowhow.md` を読み込み
 5. **差分検出**: ドキュメントに記載されているコンポーネント/レイアウト名と、実際のファイル一覧を比較
 
 ## 判定ロジック
@@ -25,8 +25,8 @@ docs/ 配下のドキュメントがコードベースの現状と一致して�
 ### 差分あり
 
 以下のいずれかに該当する場合:
-- `components/` に存在するが `docs/slidev-knowhow.md` に記載がないコンポーネント
-- `layouts/` に存在するが `docs/slidev-knowhow.md` に記載がないレイアウト
+- `components/` に存在するが `docs/reference/slidev-knowhow.md` に記載がないコンポーネント
+- `layouts/` に存在するが `docs/reference/slidev-knowhow.md` に記載がないレイアウト
 - `package.json` の scripts と `CLAUDE.md` の Commands セクションに差分
 
 → ユーザーに報告:

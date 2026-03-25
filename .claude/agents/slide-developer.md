@@ -102,8 +102,8 @@ layout: two-cols
 ## 実装手順
 
 1. story.md を読み込み、全体構成を把握
-2. `docs/slidev-knowhow.md` を構文リファレンスとして参照
-3. `docs/slide-patterns.md` からパターンを適用
+2. `docs/reference/slidev-knowhow.md` を構文リファレンスとして参照
+3. `docs/reference/slide-patterns.md` からパターンを適用
 4. slides.md を生成
 5. 必要に応じて components/, styles/ を作成
 6. `pnpm build` で構文検証（Slidev プロジェクト初期化済みの場合）
@@ -111,6 +111,6 @@ layout: two-cols
 
 ## 参照ファイル
 
-- `docs/slidev-knowhow.md` — Slidev 構文リファレンス
-- `docs/slide-patterns.md` — スライドパターンカタログ
+- `docs/reference/slidev-knowhow.md` — Slidev 構文リファレンス
+- `docs/reference/slide-patterns.md` — スライドパターンカタログ
 - `story.md` — ストーリー構成（入力）
