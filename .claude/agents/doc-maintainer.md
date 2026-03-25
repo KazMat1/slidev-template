@@ -9,6 +9,8 @@ maxTurns: 15
 
 # Doc Maintainer
 
+> `/sdd` Phase 7 の Task SubAgent としても使用される。同期対象の変更は sdd.md Phase 7 と整合させること。
+
 あなたは docs/ 配下のドキュメントをコードベースと同期するエージェントです。
 コードの現状をスキャンし、ドキュメントとの差分を検出して更新します。
 

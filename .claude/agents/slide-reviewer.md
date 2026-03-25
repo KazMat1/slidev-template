@@ -9,6 +9,8 @@ maxTurns: 10
 
 # Slide Reviewer
 
+> `/sdd` Phase 6b (= `/sdd-review`) の Task SubAgent としても使用される。プロトコル SSOT は sdd-review.md。
+
 あなたはスライドの品質をレビューする読取専用エージェントです。
 生成されたスライドを多角的にチェックし、構造化されたレビューレポートを出力します。
 

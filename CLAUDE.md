@@ -17,51 +17,18 @@ SDD (Spec-Driven Development) + 専門化 SubAgents でスライド自動生成�
 
 @docs/reference/slidev-knowhow.md
 
-## スライドパターン
-
-@docs/reference/slide-patterns.md
-
-## SubAgent ワークフロー
-
-### `/sdd` コマンド（推奨）
-
-統一的な Spec-Driven Development コマンド。7フェーズを順に実行し、各フェーズの重い処理を SubAgent に委譲:
-
-1. 事前準備 → プロジェクトドキュメント読み込み
-2. 要件定義 → `spec-analyst` SubAgent で requirements.md 作成 + 明確化ループ
-3. 設計 → `spec-analyst` SubAgent で research.md + design.md 作成
-4. 実装計画 → `spec-analyst` SubAgent で tasks.md 作成
-5. 整合性分析 → `spec-analyst` SubAgent で要件・設計・タスクの整合性チェック
-6. 実装 → `slide-developer` SubAgent でスライド生成 + `slide-reviewer` でレビュー
-7. 完了 → GitHub Issues 変換（オプション）+ `doc-maintainer` でドキュメント同期
-
-### `/sdd-*` サブコマンド
-
-`/sdd` パイプライン外で個別フェーズを独立実行できるコマンド:
-
-- `/sdd-constitution` — プロジェクト Constitution の作成・更新（spec 不要、パイプライン外）
-- `/sdd-analyze {spec-name}` — 要件・設計・タスクの整合性分析（読取専用、Phase 5 相当）
-- `/sdd-review [spec-name]` — slides.md の品質レビュー（読取専用、Phase 6b 相当）
-
-### 個別 SubAgents
-
-専門化 SubAgents は `/sdd` から自動的に呼ばれるが、個別利用も可能:
-
-- **spec-analyst** — 要件分析・設計・タスク分割・整合性分析
-- **slide-story-writer** — 箇条書き → ストーリー構成 (story.md) 生成
-- **slide-developer** — ストーリー → Slidev マークダウン生成
-- **slide-reviewer** — 品質チェック・仕様分析レビュー（読取専用）
-- **doc-maintainer** — docs/ 配下のドキュメントをコードベースと同期
-
-## ドキュメント管理
-
-- `/doc-sync` で現在のドキュメントの鮮度をチェック
-- `/doc-update` で doc-maintainer を起動してドキュメントを自動更新
-- docs/ 配下のファイルは手動編集も可能（エージェントは既存内容を保持して追記する）
-
 ## SDD ワークフロー
 
-@docs/guides/sdd-workflow.md
+`/sdd` コマンドで 7 フェーズの Spec-Driven Development を実行（推奨）。
+
+サブコマンド（パイプライン外で個別実行可能）:
+- `/sdd-constitution` — Constitution の作成・更新
+- `/sdd-analyze {spec-name}` — 整合性分析（読取専用）
+- `/sdd-review [spec-name]` — スライドレビュー（読取専用）
+
+ドキュメント管理: `/doc-sync` (チェック), `/doc-update` (更新)
+
+個別 SubAgents: spec-analyst, slide-story-writer, slide-developer, slide-reviewer, doc-maintainer
 
 ## 成果物の配置
 
