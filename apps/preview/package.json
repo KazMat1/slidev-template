@@ -1,0 +1,17 @@
+{
+  "name": "@slidegen/preview",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --port 3030 --open false --remote",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^51.0.0",
+    "@slidev/theme-default": "latest"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.50.0"
+  }
+}
