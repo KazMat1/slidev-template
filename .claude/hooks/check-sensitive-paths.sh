@@ -31,6 +31,7 @@ ALLOWED_PREFIXES=(
   "/dev/"
   # Claude Code で利用するディレクトリも許可
   "$HOME/.claude/plans"
+  "$HOME/.claude/projects/slidev-template/memory"
 )
 
 # 共通: パスの許可判定
