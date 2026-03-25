@@ -60,3 +60,9 @@ Spec-Kit + 専門化 SubAgents でスライド自動生成ワークフローを�
 
 - `.claude/settings.json`
 - `.claude/hooks/check-sensitive-paths.sh`
+
+## Active Technologies
+- TypeScript 5.x / Node.js v18+ (001-monorepo-slide-generator)
+
+## Recent Changes
+- 001-monorepo-slide-generator: Added TypeScript 5.x / Node.js v18+
