@@ -23,22 +23,34 @@ Spec-Kit + 専門化 SubAgents でスライド自動生成ワークフローを�
 
 ## SubAgent ワークフロー
 
-専門化 SubAgents でコンテキスト分離して作業する:
+### `/sdd` コマンド（推奨）
 
-1. **spec-analyst** — 要件分析 → spec.md / plan.md / tasks.md 生成
-2. **slide-story-writer** — 箇条書き → ストーリー構成 (story.md) 生成
-3. **slide-developer** — ストーリー → Slidev マークダウン生成
-4. **slide-reviewer** — 品質チェック（読取専用）
-5. **doc-maintainer** — docs/ 配下のドキュメントをコードベースと同期
+統一的な Spec-Driven Development コマンド。5フェーズを順に実行し、各フェーズの重い処理を SubAgent に委譲:
 
-典型的な流れ:
-- フル開発: spec-analyst → slide-story-writer → slide-developer → slide-reviewer
-- クイック生成: slide-story-writer → slide-developer → slide-reviewer
+1. 事前準備 → プロジェクトドキュメント読み込み
+2. 要件定義 → `spec-analyst` SubAgent で requirements.md 作成
+3. 設計 → `spec-analyst` SubAgent で design.md 作成
+4. 実装計画 → `spec-analyst` SubAgent で tasks.md 作成
+5. 実装 → `slide-developer` SubAgent でスライド生成 + `slide-reviewer` でレビュー
+
+### 個別 SubAgents
+
+専門化 SubAgents は `/sdd` から自動的に呼ばれるが、個別利用も可能:
+
+- **spec-analyst** — 要件分析・設計・タスク分割
+- **slide-story-writer** — 箇条書き → ストーリー構成 (story.md) 生成
+- **slide-developer** — ストーリー → Slidev マークダウン生成
+- **slide-reviewer** — 品質チェック・仕様分析レビュー（読取専用）
+- **doc-maintainer** — docs/ 配下のドキュメントをコードベースと同期
+
+### 既存 spec-kit コマンド
+
+`/speckit.*` コマンド群は個別利用も引き続き可能。`/sdd` はその上位レイヤーとして機能する。
 
 ## ドキュメント管理
 
-- コンポーネント/レイアウト/スタイルを変更したら `@doc-maintainer` でドキュメントを同期
-- `/doc-sync` で現在のドキュメントの鮮度をチェック可能
+- `/doc-sync` で現在のドキュメントの鮮度をチェック
+- `/doc-update` で doc-maintainer を起動してドキュメントを自動更新
 - docs/ 配下のファイルは手動編集も可能（エージェントは既存内容を保持して追記する）
 
 ## Spec-Kit ワークフロー

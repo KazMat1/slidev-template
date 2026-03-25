@@ -20,13 +20,13 @@ maxTurns: 30
 - タスク分割（tasks.md）の作成
 - 各成果物の整合性確認
 
-## 手順
+## 制約
 
-1. `.claude/commands/speckit.specify.md` の手順に従い、`create-new-feature.sh` でブランチと spec.md を作成
-2. 仕様の不明点があれば `.claude/commands/speckit.clarify.md` の手順で解消
-3. `.claude/commands/speckit.plan.md` の手順で plan.md を作成
-4. `.claude/commands/speckit.tasks.md` の手順で tasks.md を作成
-5. 各成果物の生成後、commit-helper スキルでコミット
+- 出力は全て日本語・Markdown 形式
+- 不明点には必ず `[NEEDS CLARIFICATION]` マーカーを付与
+- テンプレートは `.specify/templates/` を参照
+- コミットメッセージは成果物名を含めること（例: "Add requirements.md for feature X"）
+- `/sdd` コマンドから Task ツール経由で呼ばれた場合、指定された出力先に成果物を配置すること
 
 ## Slidev プロジェクト固有の設定
 
