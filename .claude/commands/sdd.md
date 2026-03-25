@@ -336,67 +336,11 @@ Task ツール呼び出し:
 
 ## Phase 5: 整合性分析
 
-**SubAgent 委譲**: Task ツールで分析エージェントを起動する。
+`/sdd-analyze {spec-name}` と同等の分析を実行する。
+Task ツールで `spec-analyst` を起動し、6パス分析プロトコルに従う。
 
-```
-Task ツール呼び出し:
-  subagent_type: "general-purpose"
-  description: "要件・設計・タスク整合性分析"
-  prompt: |
-    あなたは spec-analyst です。以下の成果物の整合性を分析してください。
-    **STRICTLY READ-ONLY**: ファイルは一切変更しないこと。
-
-    ## 入力
-    - docs/specs/{spec-name}/requirements.md
-    - docs/specs/{spec-name}/design.md
-    - docs/specs/{spec-name}/tasks.md
-    - docs/specs/constitution.md（存在する場合）
-
-    ## 分析手順
-
-    ### 1. セマンティックモデル構築
-    要件・設計・タスクの内部表現を作成。
-
-    ### 2. 6パス検出
-    A. **重複検出**: 類似要件の検出
-    B. **曖昧性検出**: vague な形容詞（高速、スケーラブル等）
-    C. **未定義検出**: アクション/成果物の欠落
-    D. **Constitution 整合性**: 原則違反の検出
-    E. **カバレッジギャップ**: タスクのない要件 / 要件のないタスク
-    F. **矛盾検出**: 用語のドリフト、データモデル競合
-
-    ### 3. 重大度ヒューリスティック
-    - CRITICAL: Constitution 違反 / コア機能のカバレッジ 0%
-    - HIGH: 重複 / 矛盾する要件 / テスト不能な基準
-    - MEDIUM: 用語ドリフト / 非機能要件の欠落
-    - LOW: 文言改善 / 軽微な冗長
-
-    ## 出力フォーマット
-    ```markdown
-    # 整合性分析レポート
-
-    ## Findings
-    | ID | Category | Severity | Location(s) | Summary | Recommendation |
-    |----|----------|----------|-------------|---------|----------------|
-
-    ## カバレッジサマリー
-    | Requirement Key | Has Task? | Task IDs | Notes |
-    |-----------------|-----------|----------|-------|
-
-    ## メトリクス
-    - Total Requirements:
-    - Total Tasks:
-    - Coverage %:
-    - Ambiguity Count:
-    - Critical Issues Count:
-    ```
-
-    ## 制約
-    - 日本語で記述
-    - ファイルの変更は一切行わない（読取専用）
-    - Findings は最大50件
-    - CRITICAL 問題がある場合、その旨を明記
-```
+> **プロトコルの詳細は `.claude/commands/sdd-analyze.md` を参照。**
+> SubAgent prompt は `sdd-analyze.md` の「SubAgent 委譲」セクションをそのまま使用する。
 
 ### SubAgent 完了後
 
@@ -460,30 +404,11 @@ Task ツール呼び出し:
 
 ### レビュー SubAgent
 
-実装 SubAgent 完了後:
+実装 SubAgent 完了後、`/sdd-review {spec-name}` と同等のレビューを実行する。
+Task ツールで `slide-reviewer` を起動し、品質チェックプロトコルに従う。
 
-```
-Task ツール呼び出し:
-  subagent_type: "general-purpose"
-  description: "スライドレビュー"
-  prompt: |
-    あなたは slide-reviewer です。生成されたスライドをレビューしてください。
-
-    ## 入力
-    - slides.md
-    - docs/specs/{spec-name}/requirements.md（要件との整合性チェック用）
-    - docs/specs/{spec-name}/design.md（設計との整合性チェック用）
-
-    ## チェック項目
-    - 構文検証（フロントマター、レイアウト名、コードブロック）
-    - コンテンツ密度（1スライド7項目以下、3秒ルール）
-    - レイアウト多様性（同一レイアウト3枚連続禁止）
-    - ストーリーフロー（論理的な流れ）
-    - 要件・設計との整合性
-
-    ## 出力
-    構造化されたレビューレポート（スコア、問題点、改善提案）
-```
+> **プロトコルの詳細は `.claude/commands/sdd-review.md` を参照。**
+> SubAgent prompt は `sdd-review.md` の「SubAgent 委譲」セクションをそのまま使用する。
 
 ### SubAgent 完了後
 

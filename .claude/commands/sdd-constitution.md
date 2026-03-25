@@ -5,6 +5,8 @@ description: "プロジェクト Constitution の作成・更新。プロジェ�
 
 # SDD Constitution
 
+> **SSOT**: このファイルが Constitution 作成プロトコルの正規ソース。
+
 プロジェクト全体の方針・原則・制約を `docs/specs/constitution.md` に定義する独立コマンド。
 `/sdd` パイプライン外でも利用可能。spec 作成前に実行することを推奨。
 

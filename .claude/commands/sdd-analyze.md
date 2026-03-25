@@ -5,6 +5,8 @@ description: "SDD 整合性分析: 要件・設計・タスクの整合性を読
 
 # SDD Analyze
 
+> **SSOT**: このファイルが整合性分析プロトコルの正規ソース。`/sdd` Phase 5 からも参照される。
+
 既存の spec 成果物（requirements.md, design.md, tasks.md）の整合性を分析する独立コマンド。
 `/sdd` Phase 5 と同等の分析を、パイプライン外で個別実行できる。
 
