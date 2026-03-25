@@ -51,6 +51,25 @@ styles/                       # Phase 6: スタイル
 - **slide-reviewer** — 品質チェック・仕様分析レビュー（読取専用）
 - **doc-maintainer** — docs/ 配下のドキュメントをコードベースと同期
 
+## サブコマンド
+
+`/sdd` パイプライン外で個別フェーズを独立実行できるコマンド:
+
+| コマンド | 対応 Phase | 用途 | 読取専用 |
+|---------|-----------|------|:--------:|
+| `/sdd-constitution` | - | プロジェクト Constitution の作成・更新 | No |
+| `/sdd-analyze {spec-name}` | Phase 5 | 要件・設計・タスクの整合性分析 | Yes |
+| `/sdd-review [spec-name]` | Phase 6b | slides.md の品質レビュー | Yes |
+
+### 使い分け
+
+- **`/sdd`**: 新規スライド作成時の全フェーズ一括実行（推奨）
+- **`/sdd-constitution`**: プロジェクト開始時に方針を定義。spec 不要
+- **`/sdd-analyze`**: 手動編集後の品質ゲート。成果物の再分析に利用
+- **`/sdd-review`**: `/sdd` 外で作成したスライドにも使える汎用レビュー
+
+---
+
 ## フェーズ詳細
 
 ### Phase 1: 事前準備

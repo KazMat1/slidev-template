@@ -25,7 +25,8 @@ description: "Spec-Driven Development: 要件→設計→実装計画→整合�
    - `docs/reference/slidev-knowhow.md` — Slidev 構文・レイアウト・設計原則
    - `docs/reference/slide-patterns.md` — スライドパターンカタログ
    - `docs/specs/constitution.md` — プロジェクト Constitution（存在する場合のみ）
-4. ユーザーに準備完了を報告し、Phase 2 に進む
+4. `docs/specs/constitution.md` が存在しない場合、`/sdd-constitution` の事前実行を推奨する旨をユーザーに案内
+5. ユーザーに準備完了を報告し、Phase 2 に進む
 
 ---
 
@@ -402,6 +403,7 @@ Task ツール呼び出し:
 1. 分析レポートをユーザーに提示
 2. **CRITICAL 問題がある場合**: Phase 3-4 に戻って修正を提案
 3. CRITICAL なしの場合、ユーザーが承認したら Phase 6 に進む
+4. 再分析が必要な場合は `/sdd-analyze {spec-name}` で個別実行可能な旨を案内
 
 ---
 
@@ -488,6 +490,7 @@ Task ツール呼び出し:
 1. 生成されたスライドの概要をユーザーに報告
 2. レビュー結果をユーザーに提示
 3. 修正が必要な場合はユーザーと相談して対応
+4. レビューのみ再実行する場合は `/sdd-review` で個別実行可能な旨を案内
 
 ---
 

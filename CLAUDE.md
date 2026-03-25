@@ -35,6 +35,14 @@ SDD (Spec-Driven Development) + 専門化 SubAgents でスライド自動生成�
 6. 実装 → `slide-developer` SubAgent でスライド生成 + `slide-reviewer` でレビュー
 7. 完了 → GitHub Issues 変換（オプション）+ `doc-maintainer` でドキュメント同期
 
+### `/sdd-*` サブコマンド
+
+`/sdd` パイプライン外で個別フェーズを独立実行できるコマンド:
+
+- `/sdd-constitution` — プロジェクト Constitution の作成・更新（spec 不要、パイプライン外）
+- `/sdd-analyze {spec-name}` — 要件・設計・タスクの整合性分析（読取専用、Phase 5 相当）
+- `/sdd-review [spec-name]` — slides.md の品質レビュー（読取専用、Phase 6b 相当）
+
 ### 個別 SubAgents
 
 専門化 SubAgents は `/sdd` から自動的に呼ばれるが、個別利用も可能:

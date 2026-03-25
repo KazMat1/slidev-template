@@ -36,7 +36,8 @@ maxTurns: 15
 ### 3. sdd-workflow.md ↔ /sdd コマンド
 
 - `.claude/commands/sdd.md` の内容を確認
-- `docs/guides/sdd-workflow.md` との整合性をチェック
+- `.claude/commands/sdd-constitution.md`, `sdd-analyze.md`, `sdd-review.md` の内容を確認
+- `docs/guides/sdd-workflow.md` との整合性をチェック（サブコマンドセクション含む）
 - コマンドの変更があれば更新
 
 ### 4. CLAUDE.md ↔ package.json
