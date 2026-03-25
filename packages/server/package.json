@@ -1,0 +1,25 @@
+{
+  "name": "@slidegen/server",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "echo 'No tests yet'"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.0",
+    "@slidegen/generator": "workspace:*",
+    "@slidegen/shared": "workspace:*",
+    "hono": "^4.7.0",
+    "ulid": "^2.3.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
