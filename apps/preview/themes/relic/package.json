@@ -1,0 +1,12 @@
+{
+  "name": "slidev-addon-relic",
+  "version": "0.1.0",
+  "private": true,
+  "keywords": ["slidev-addon", "slidev"],
+  "engines": {
+    "slidev": ">=0.51.0"
+  },
+  "slidev": {
+    "defaults": {}
+  }
+}
