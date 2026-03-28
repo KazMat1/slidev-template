@@ -1,0 +1,21 @@
+:root {
+  --color-primary: #2563EB;
+  --color-secondary: #7C3AED;
+  --color-accent: #F59E0B;
+  --color-black: #1F2937;
+  --color-gray: #F3F4F6;
+  --color-white: #FFFFFF;
+
+  --font-ja: "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-ja-bold: "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-en: "Inter", sans-serif;
+
+  --text-h1: 18pt;
+  --text-h2: 14pt;
+  --text-body: 12pt;
+  --text-small: 10pt;
+
+  --slidev-theme-primary: #2563EB;
+  --slidev-theme-secondary: #7C3AED;
+  --slidev-theme-background: #FFFFFF;
+}

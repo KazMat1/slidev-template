@@ -1,4 +1,50 @@
-/* SlideGen global styles */
-:root {
-  --slidev-theme-primary: #3b82f6;
+/* ==============================================
+   Global styles (shared across all themes)
+   Design tokens are defined in each theme's tokens.css
+   ============================================== */
+
+/* --- Global Typography --- */
+.slidev-layout {
+  font-family: var(--font-ja), var(--font-en);
+  color: var(--color-black);
 }
+
+.slidev-layout h1 {
+  font-family: var(--font-ja-bold), var(--font-en);
+  font-weight: 700;
+  font-size: var(--text-h1);
+  color: var(--color-black);
+}
+
+.slidev-layout h2 {
+  font-family: var(--font-ja-bold), var(--font-en);
+  font-weight: 700;
+  font-size: var(--text-h2);
+  color: var(--color-black);
+}
+
+.slidev-layout p,
+.slidev-layout li {
+  font-size: var(--text-body);
+  line-height: 1.8;
+}
+
+.slidev-layout .text-small {
+  font-size: var(--text-small);
+}
+
+/* --- Accent Heading --- */
+.accent-heading {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: var(--text-h2);
+}
+
+/* --- Utility Classes --- */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-gray { background-color: var(--color-gray); }
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-accent { color: var(--color-accent); }

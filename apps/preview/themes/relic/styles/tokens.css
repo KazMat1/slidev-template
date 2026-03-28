@@ -1,0 +1,34 @@
+/* ==============================================
+   ReLic Design System — Design Tokens
+   ============================================== */
+
+:root {
+  /* Color — generic names */
+  --color-primary: #143C5D;
+  --color-secondary: #D7A47A;
+  --color-accent: #E40077;
+  --color-black: #212121;
+  --color-gray: #F5F5F5;
+  --color-white: #FFFFFF;
+
+  /* ReLic-specific aliases (backward compat) */
+  --color-navy: var(--color-primary);
+  --color-brown: var(--color-secondary);
+  --color-pink: var(--color-accent);
+
+  /* Typography */
+  --font-ja: "Yu Gothic Medium", "Yu Gothic", "游ゴシック Medium", "游ゴシック", sans-serif;
+  --font-ja-bold: "Yu Gothic Bold", "Yu Gothic", "游ゴシック Bold", "游ゴシック", sans-serif;
+  --font-en: Arial, sans-serif;
+
+  /* Font Sizes */
+  --text-h1: 18pt;
+  --text-h2: 14pt;
+  --text-body: 12pt;
+  --text-small: 10pt;
+
+  /* Slidev overrides */
+  --slidev-theme-primary: #143C5D;
+  --slidev-theme-secondary: #D7A47A;
+  --slidev-theme-background: #FFFFFF;
+}
